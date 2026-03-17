@@ -1,148 +1,198 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AG Head Quarter Yangon</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AG Head Quarter Yangon</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
 
-<style>
-body {
-  margin:0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(135deg, #0f172a, #1e3a8a);
-  color:white;
-}
+  <style>
+    :root {
+      --primary: #2c5282;        /* deep faithful blue */
+      --primary-dark: #1a365d;
+      --accent: #d69e2e;          /* warm gold */
+      --accent-light: #f6e05e;
+      --text: #f7fafc;
+      --text-dark: #e2e8f0;
+      --bg: #0f172a;
+      --card-bg: rgba(45, 55, 72, 0.65);
+    }
 
-header {
-  text-align:center;
-  padding:80px 20px;
-  background:linear-gradient(to right,#2563eb,#7c3aed);
-}
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-h1 { font-size:42px; }
-p { opacity:0.85; }
+    body {
+      font-family: 'Lora', serif;
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+      color: var(--text);
+      line-height: 1.7;
+      min-height: 100vh;
+    }
 
-.section {
-  padding:50px 20px;
-  max-width:1000px;
-  margin:auto;
-}
+    header {
+      text-align: center;
+      padding: 120px 20px 80px;
+      background: linear-gradient(135deg, var(--primary) 0%, #4c51bf 100%);
+      position: relative;
+      overflow: hidden;
+    }
 
-.card {
-  background:rgba(255,255,255,0.08);
-  padding:20px;
-  border-radius:15px;
-  margin-top:20px;
-  backdrop-filter: blur(10px);
-}
+    header::before {
+      content: "";
+      position: absolute;
+      top: -50%; left: -50%;
+      width: 200%; height: 200%;
+      background: radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 60%);
+      animation: shine 12s infinite linear;
+    }
 
-.grid {
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:20px;
-}
+    @keyframes shine {
+      0% { transform: translateX(-30%) translateY(-30%) rotate(0deg); }
+      100% { transform: translateX(30%) translateY(30%) rotate(360deg); }
+    }
 
-.people {
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:20px;
-}
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: 4.2rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      color: white;
+      text-shadow: 0 4px 12px rgba(0,0,0,0.4);
+    }
 
-.person {
-  text-align:center;
-}
+    header p {
+      font-size: 1.5rem;
+      opacity: 0.9;
+      letter-spacing: 1px;
+    }
 
-.person img {
-  width:100%;
-  height:220px;
-  object-fit:cover;
-  border-radius:15px;
-}
+    .section {
+      padding: 70px 20px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
-@media(max-width:700px){
-  .grid { grid-template-columns:1fr; }
-  .people { grid-template-columns:1fr; }
-}
+    h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      color: var(--accent);
+      text-align: center;
+      margin-bottom: 40px;
+      position: relative;
+    }
 
-footer {
-  text-align:center;
-  padding:30px;
-  opacity:0.6;
-}
-</style>
+    h2::after {
+      content: "";
+      width: 80px;
+      height: 3px;
+      background: var(--accent);
+      display: block;
+      margin: 16px auto 0;
+      border-radius: 2px;
+    }
 
-</head>
+    .card {
+      background: var(--card-bg);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 32px;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
 
-<body>
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.4);
+    }
 
-<header>
-  <h1>🙏 AG Head Quarter Yangon</h1>
-  <p>Faith • Love • Service</p>
-</header>
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 28px;
+    }
 
-<div class="section">
-  <h2>📍 Location</h2>
-  <div class="card">
-    <p>AG Head Quarter Yangon, Myanmar (Burma)</p>
-    <iframe 
-      src="https://maps.google.com/maps?q=AG%20Head%20Quarter%20Yangon%20Myanmar&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="250" style="border:0;">
-    </iframe>
-  </div>
-</div>
+    .people {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 32px;
+    }
 
-<div class="section">
-  <h2>👤 Leadership</h2>
+    .person {
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
 
-  <div class="people">
+    .person:hover {
+      transform: translateY(-10px);
+    }
 
-    <div class="person">
-      <img src="person1.jpg">
-      <h3>Rev. Hosea</h3>
-      <p>General Secretary</p>
-      <p>📞 09250190533</p>
-    </div>
+    .person img {
+      width: 100%;
+      height: 260px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 4px solid rgba(214, 158, 46, 0.25);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+      transition: border-color 0.4s ease;
+    }
 
-    <div class="person">
-      <img src="person2.jpg">
-      <h3>Rev. G Zone Chan</h3>
-      <p>Chief Financial Department</p>
-      <p>📞 09400055789</p>
-    </div>
+    .person:hover img {
+      border-color: var(--accent-light);
+    }
 
-    <div class="person">
-      <img src="person3.jpg">
-      <h3>Church Ministry</h3>
-      <p>Leadership Team</p>
-    </div>
+    .person h3 {
+      margin: 16px 0 6px;
+      font-family: 'Playfair Display', serif;
+      color: var(--accent);
+      font-size: 1.5rem;
+    }
 
-  </div>
-</div>
+    .person p {
+      opacity: 0.9;
+      font-size: 1.05rem;
+    }
 
-<div class="section">
-  <h2>📖 Ministries</h2>
-  <div class="card">
-    <ul>
-      <li>E.B.I Evangelical Bible Institute (Myitkyina)</li>
-      <li>Bible School</li>
-      <li>Rainbow Foundation</li>
-      <li>Kids Ministry</li>
-      <li>Church Planting Activities</li>
-      <li>Soul Winning Center</li>
-    </ul>
-  </div>
-</div>
+    ul {
+      list-style: none;
+      font-size: 1.15rem;
+    }
 
-<div class="section">
-  <h2>📞 Contact</h2>
-  <div class="card">
-    <p><strong>VIP Contact:</strong> 09250190533</p>
-  </div>
-</div>
+    ul li {
+      margin: 14px 0;
+      padding-left: 28px;
+      position: relative;
+    }
 
-<footer>
-  <p>© 2026 AG Head Quarter Yangon</p>
-</footer>
+    ul li::before {
+      content: "✦";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+      font-size: 1.3rem;
+    }
 
-</body>
-</html>
+    .contact-highlight {
+      font-size: 1.4rem;
+      font-weight: 600;
+      color: var(--accent);
+      text-align: center;
+      padding: 24px;
+      background: rgba(214, 158, 46, 0.12);
+      border-radius: 16px;
+      border: 1px solid rgba(214, 158, 46, 0.3);
+    }
+
+    footer {
+      text-align: center;
+      padding: 50px 20px;
+      opacity: 0.7;
+      font-size: 0.95rem;
+      border-top: 1px solid rgba(255
