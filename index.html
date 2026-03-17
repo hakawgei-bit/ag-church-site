@@ -5,21 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>AG Head Quarter Yangon</title>
 
+<!-- GOOGLE FONT -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
   margin:0;
-  font-family:'Segoe UI',sans-serif;
+  font-family:'Poppins',sans-serif;
   color:white;
   background:#0f172a;
-  scroll-behavior:smooth;
 }
 
-/* HERO WITH IMAGE + COLOR OVERLAY */
+/* HERO WITH NICE BACKGROUND */
 .hero {
   height:100vh;
   background:
-    linear-gradient(rgba(37,99,235,0.6), rgba(124,58,237,0.6)),
-    url('person3.jpg') center/cover;
+    linear-gradient(rgba(15,23,42,0.7), rgba(15,23,42,0.9)),
+    url('https://images.unsplash.com/photo-1507692049790-de58290a4334') center/cover;
   display:flex;
   justify-content:center;
   align-items:center;
@@ -27,13 +29,13 @@ body {
 }
 
 .hero h1 {
-  font-size:50px;
-  animation:fadeDown 1.5s ease;
+  font-size:52px;
+  font-weight:600;
 }
 
 .hero p {
-  opacity:0.9;
-  animation:fadeUp 1.5s ease;
+  opacity:0.85;
+  font-size:18px;
 }
 
 /* SECTION */
@@ -43,18 +45,18 @@ body {
   margin:auto;
 }
 
-/* GLASS CARD */
+/* CARD */
 .card {
-  background:rgba(255,255,255,0.08);
+  background:rgba(255,255,255,0.06);
   padding:25px;
-  border-radius:15px;
-  backdrop-filter: blur(10px);
+  border-radius:20px;
+  backdrop-filter: blur(12px);
   margin-top:20px;
   transition:0.3s;
 }
 
 .card:hover {
-  transform:translateY(-5px);
+  transform:translateY(-6px);
 }
 
 /* PEOPLE */
@@ -66,35 +68,27 @@ body {
 
 .person {
   text-align:center;
-  animation:fadeUp 1s ease;
 }
 
 .person img {
   width:100%;
   height:260px;
   object-fit:cover;
-  border-radius:15px;
-  transition:0.3s;
+  border-radius:20px;
 }
 
-.person img:hover {
-  transform:scale(1.05);
-}
-
-/* COLOR SECTIONS */
+/* COLOR SECTION */
 .color-section {
-  background:linear-gradient(to right,#2563eb,#7c3aed);
+  background:linear-gradient(135deg,#2563eb,#7c3aed);
 }
 
-/* ANIMATIONS */
-@keyframes fadeDown {
-  from {opacity:0; transform:translateY(-40px);}
-  to {opacity:1; transform:translateY(0);}
-}
-
-@keyframes fadeUp {
-  from {opacity:0; transform:translateY(40px);}
-  to {opacity:1; transform:translateY(0);}
+/* CONTACT SPECIAL STYLE */
+.contact-box {
+  background:linear-gradient(135deg,#22c55e,#16a34a);
+  padding:30px;
+  border-radius:25px;
+  text-align:center;
+  font-size:18px;
 }
 
 /* MOBILE */
@@ -106,7 +100,7 @@ body {
 footer {
   text-align:center;
   padding:30px;
-  opacity:0.7;
+  opacity:0.6;
 }
 </style>
 
@@ -183,16 +177,17 @@ footer {
   <div class="card">
     <iframe 
       src="https://maps.google.com/maps?q=AG%20Head%20Quarter%20Yangon%20Myanmar&t=&z=13&ie=UTF8&iwloc=&output=embed"
-      width="100%" height="250" style="border:0;">
+      width="100%" height="250" style="border-radius:15px; border:0;">
     </iframe>
   </div>
 </div>
 
 <!-- CONTACT -->
-<div class="section color-section">
+<div class="section">
   <h2>Contact</h2>
-  <div class="card">
-    <p><strong>VIP:</strong> 09250190533</p>
+  <div class="contact-box">
+    <p><strong>VIP Contact:</strong></p>
+    <p>📞 09250190533</p>
   </div>
 </div>
 
